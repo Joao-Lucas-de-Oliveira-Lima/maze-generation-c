@@ -467,7 +467,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+1);
 		printf("   Change maze start   == (%d, %d)  ", *coordenada_x_inicio_1, *coordenada_y_inicio_1);
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+2);
-		printf("   Change Maze end     == (%d, %d)        ", *coordenada_x_fim_1, *coordenada_y_fim_2);
+		printf("   Change maze end     == (%d, %d)        ", *coordenada_x_fim_1, *coordenada_y_fim_2);
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+3);
 		printf("                       ");
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+4);
@@ -659,24 +659,23 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 		}
 	}
 	if(opcao_escolhida == 1){
-		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal);
-		printf("Redimensionar bordas:                                                                        ");
+		printf("Resize borders:                                                                         ");
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+1);
-		printf("   Largura do labirinto == %d       ", *largura_atual);
+		printf("   Change maze width    == %d       ", *largura_atual);
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+2);
-		printf("   Altura do labirinto  == %d         ", *altura_atual);
+		printf("   Change maze height   == %d         ", *altura_atual);
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+3);
 		printf("                       ");
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+4);
-		printf("Largura m%cnima == %d                                                    ", 161, largura_minima);
+		printf("Min width == %d                                                    ", largura_minima);
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+5);
-		printf("Largura m%cxima == %d       ", 160, largura_maxima);
+		printf("Max width == %d             ", largura_maxima);
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+6);
-		printf("Altura m%cnima == %d                    ", 161, altura_minima);
+		printf("Min height == %d                    ", altura_minima);
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+7);
-		printf("Altura m%cxima == %d", 160, altura_maxima);
+		printf("Max height == %d", altura_maxima);
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+8);
-		printf("Aperte ESC para retornar ao menu principal");
+		printf("Press ESC to return to the main menu");
 		while(botao_esc_acionado != 1){
 			desenhar_seta(coordenada_x_menu_principal, coordenada_y_menu_principal+1, &opcao_escolhida_menu_secundario, 0, 2,
 				0, &botao_enter_acionado, &botao_esc_acionado, 1, 1, 1, 0);
@@ -760,7 +759,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 								*largura_atual = entrada_de_dados_processada;
 								*altura_atual = 16;
 								reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+2);
-								printf("   Altura do labirinto  == %d         ", *altura_atual);
+								printf("   Change maze height   == %d         ", *altura_atual);
 							}
 						}
 						botao_enter_acionado = 0;
@@ -806,7 +805,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 				}
 				if(botao_esc_acionado == 1) botao_esc_acionado = 0;
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+1);
-				printf("   Largura do labirinto == %d ", *largura_atual);
+				printf("   Change maze width    == %d ", *largura_atual);
 			}else if(opcao_escolhida_menu_secundario == 1 && botao_enter_acionado == 1){
 				reposicionar_indicador_do_console(coordenada_x_menu_principal+27, coordenada_y_menu_principal+2);
 				printf("  ");
@@ -883,7 +882,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 								*largura_atual = 53;
 								*altura_atual = entrada_de_dados_processada;
 								reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+1);
-								printf("   Largura do labirinto == %d       ", *largura_atual);
+								printf("   Change maze width    == %d       ", *largura_atual);
 							}else if(opcao_escolhida_menu_terciario == 3 && botao_enter_acionado == 1){
 								desenhar_bordas_da_matriz(1, coordenada_x_menu_principal, coordenada_y_menu_principal+9, 
 									*largura_atual*2, *altura_atual, *caractere_utilizado_nas_bordas, *cor_das_bordas);
@@ -933,7 +932,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 				}
 				if(botao_esc_acionado == 1) botao_esc_acionado = 0;
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+2);
-				printf("   Altura do labirinto  == %d", *altura_atual);
+				printf("   Change maze height   == %d", *altura_atual);
 			}
 			botao_enter_acionado = 0;
 		}
