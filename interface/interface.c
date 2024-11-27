@@ -463,23 +463,23 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 	int opcao_escolhida_menu_secundario = 0, botao_esc_acionado = 0, botao_enter_acionado = 0;
 	if(opcao_escolhida == 0){
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal);
-		printf("Alterar coordenadas de refer%cncia:                                                           ", 136);
+		printf("Change reference coordinates:                                                                ");
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+1);
-		printf("   Come%co do labirinto == (%d, %d)  ", 135, *coordenada_x_inicio_1, *coordenada_y_inicio_1);
+		printf("   Change maze start   == (%d, %d)  ", *coordenada_x_inicio_1, *coordenada_y_inicio_1);
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+2);
-		printf("   Final do labirinto  == (%d, %d)        ", *coordenada_x_fim_1, *coordenada_y_fim_2);
+		printf("   Change Maze end     == (%d, %d)        ", *coordenada_x_fim_1, *coordenada_y_fim_2);
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+3);
 		printf("                       ");
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+4);
-		printf("Eixo x: de 0 %c %d                                                       ", 133,*largura_atual-1);
+		printf("Axis x: from 0 to %d                                                       ",*largura_atual-1);
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+5);
-		printf("Eixo y: de 0 %c %d                          ", 133, *altura_atual-1);
+		printf("Axis y: from 0 to %d                          ", *altura_atual-1);
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+6);
-		printf("Largura atual do labirinto == %d       ", *largura_atual);
+		printf("Current maze width == %d       ", *largura_atual);
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+7);
-		printf("Altura atual do labirinto == %d", *altura_atual);
+		printf("Current maze height == %d", *altura_atual);
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+8);
-		printf("Aperte ESC para retornar ao menu principal");
+		printf("Press ESC to return to the main menu");
 		while(botao_esc_acionado != 1){
 			desenhar_seta(coordenada_x_menu_principal, coordenada_y_menu_principal+1, &opcao_escolhida_menu_secundario, 0, 2,
 				0, &botao_enter_acionado, &botao_esc_acionado, 1, 1, 1, 0);
@@ -509,7 +509,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 						desenhar_retangulo((*coordenada_x_fim_1*2)+5, *coordenada_y_fim_1+10, (*coordenada_x_fim_2*2)+4, 
 							*coordenada_y_fim_2+10, *cor_do_retangulo_final, *caractere_utilizado_nas_paredes);
 						reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+2);
-						printf("   Final do labirinto  == (%d, %d)        ", *coordenada_x_fim_1, *coordenada_y_fim_2);
+						printf("   Change maze end     == (%d, %d)        ", *coordenada_x_fim_1, *coordenada_y_fim_2);
 					}else{
 						desenhar_retangulo((*coordenada_x_inicio_1*2)+5, *coordenada_y_inicio_1+10, 
 							(*coordenada_x_inicio_2*2)+4, *coordenada_y_inicio_2+10, preto, 
@@ -522,7 +522,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 					}
 				}
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+1);
-				printf("-> Come%co do labirinto ==  %d, ", 135, *coordenada_x_inicio_1 );
+				printf("-> Change maze start   ==  %d, ", *coordenada_x_inicio_1 );
 				int contador = 0, auxiliar;
 				if(entrada_de_dados_processada == -1) auxiliar = *coordenada_x_inicio_1;
 				else auxiliar = entrada_de_dados_processada;
@@ -555,7 +555,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 						desenhar_retangulo((*coordenada_x_fim_1*2)+5, *coordenada_y_fim_1+10, (*coordenada_x_fim_2*2)+4, 
 							*coordenada_y_fim_2+10, *cor_do_retangulo_final, *caractere_utilizado_nas_paredes);
 						reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+2);
-						printf("   Final do labirinto  == (%d, %d)        ", *coordenada_x_fim_1, *coordenada_y_fim_2);
+						printf("   Change maze end     == (%d, %d)        ", *coordenada_x_fim_1, *coordenada_y_fim_2);
 					}else{
 						desenhar_retangulo((*coordenada_x_inicio_1*2)+5, *coordenada_y_inicio_1+10, 
 							(*coordenada_x_inicio_2*2)+4, *coordenada_y_inicio_2+10, preto, 
@@ -568,7 +568,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 					}	
 				}
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+1);
-				printf("   Come%co do labirinto == (%d, %d)  ", 135, *coordenada_x_inicio_1, *coordenada_y_inicio_1);
+				printf("   Change maze start   == (%d, %d)  ", *coordenada_x_inicio_1, *coordenada_y_inicio_1);
 			}
 			if(opcao_escolhida_menu_secundario == 1 && botao_enter_acionado == 1){
 				char entrada_de_dados_posicao_x[50];
@@ -598,7 +598,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 						desenhar_retangulo((*coordenada_x_fim_1*2)+5, *coordenada_y_fim_1+10, (*coordenada_x_fim_2*2)+4, 
 							*coordenada_y_fim_2+10, *cor_do_retangulo_final, *caractere_utilizado_nas_paredes);
 						reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+1);
-						printf("   Come%co do labirinto == (%d, %d)  ", 135, *coordenada_x_inicio_1, *coordenada_y_inicio_1);
+						printf("   Change maze start   == (%d, %d)  ", *coordenada_x_inicio_1, *coordenada_y_inicio_1);
 					}else{
 						desenhar_retangulo((*coordenada_x_fim_1*2)+5, *coordenada_y_fim_1+10, (*coordenada_x_fim_2*2)+4, 
 							*coordenada_y_fim_2+10, preto, *caractere_utilizado_nas_paredes);
@@ -609,7 +609,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 					}
 				}
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+2);
-				printf("-> Final do labirinto  ==  %d, ", *coordenada_x_fim_1 );
+				printf("-> Change maze end     ==  %d, ", *coordenada_x_fim_1 );
 				int contador = 0, auxiliar;
 				if(entrada_de_dados_processada == -1) auxiliar = *coordenada_x_fim_1;
 				else auxiliar = entrada_de_dados_processada;
@@ -642,7 +642,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 						desenhar_retangulo((*coordenada_x_fim_1*2)+5, *coordenada_y_fim_1+10, (*coordenada_x_fim_2*2)+4, 
 							*coordenada_y_fim_2+10, *cor_do_retangulo_final, *caractere_utilizado_nas_paredes);
 						reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+1);
-						printf("   Come%co do labirinto == (%d, %d)  ", 135, *coordenada_x_inicio_1, *coordenada_y_inicio_1);
+						printf("   Change maze start   == (%d, %d)  ", *coordenada_x_inicio_1, *coordenada_y_inicio_1);
 					}else{
 						desenhar_retangulo((*coordenada_x_fim_1*2)+5, *coordenada_y_fim_1+10, (*coordenada_x_fim_2*2)+4, 
 							*coordenada_y_fim_2+10, preto, *caractere_utilizado_nas_paredes);
@@ -653,7 +653,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 					}	
 				}
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+2);
-				printf("   Final do labirinto  == (%d, %d) ", *coordenada_x_fim_1, *coordenada_y_fim_1);
+				printf("   Change maze end     == (%d, %d) ", *coordenada_x_fim_1, *coordenada_y_fim_1);
 			}
 			botao_enter_acionado = 0;
 		}
