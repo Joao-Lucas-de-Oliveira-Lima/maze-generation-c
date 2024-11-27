@@ -1651,96 +1651,99 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal);
 		printf("Mostrar informa%c%ces gerais:                                                                  ", 135, 228);
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+1);
-		printf("   Mostrar matriz ");
+		printf("   Show matrix    ");
 		if(*mostrar_matriz == 0){
 			printf("                 ");
 			alterar_a_cor(branco, vermelho);
-			printf("DESLIGADO");
+			printf("OFF");
 			alterar_a_cor(branco, preto);
 		}else{
 			printf("                 ");
 			alterar_a_cor(branco, verde);
-			printf("LIGADO");
+			printf("ON");
 			alterar_a_cor(branco, preto);
 		}
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+2);
-		printf("   Mostrar tamanho da pilha ");
+		printf("   Show stack size          ");
 		if(*mostrar_tamanho_da_pilha == 0){
 			printf("       ");
 			alterar_a_cor(branco, vermelho);
-			printf("DESLIGADO");
+			printf("OFF");
 			alterar_a_cor(branco, preto);
 		}else{
 			printf("       ");
 			alterar_a_cor(branco, verde);
-			printf("LIGADO");
+			printf("ON");
 			alterar_a_cor(branco, preto);
 		}
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+3);
-		printf("   Mostrar capacidade da pilha ");
+		printf("   Show stack capacity         ");
+
 		if(*mostrar_capacidade_da_pilha == 0){
 			printf("    ");
 			alterar_a_cor(branco, vermelho);
-			printf("DESLIGADO");
+			printf("OFF");
 			alterar_a_cor(branco, preto);
 		}else{
 			printf("    ");
 			alterar_a_cor(branco, verde);
-			printf("LIGADO");
+			printf("ON");
 			alterar_a_cor(branco, preto);
 		}
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+4);
-		printf("   Mostrar coordenada atual ", 136);
+		printf("   Show current coordinate  ");
+
 		if(*mostrar_coordenada_atual == 0){
 			printf("       ");
 			alterar_a_cor(branco, vermelho);
-			printf("DESLIGADO");
+			printf("OFF");
 			alterar_a_cor(branco, preto);
 			printf("                          ");
 		}else{
 			printf("       ");
 			alterar_a_cor(branco, verde);
-			printf("LIGADO");
+			printf("ON");
 			alterar_a_cor(branco, preto);
 			printf("                         ");
 		}
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+5);
-		printf("   Mostrar valor da vari%cvel sleep ", 160);
+		printf("   Show sleep value                ");
 		if(*mostrar_valor_da_variavel_sleep == 0){
 			alterar_a_cor(branco, vermelho);
-			printf("DESLIGADO");
+			printf("OFF");
 			alterar_a_cor(branco, preto);
 		}else{
 			alterar_a_cor(branco, verde);
-			printf("LIGADO");
+			printf("ON");
 			alterar_a_cor(branco, preto);
 		}
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+6);
-		printf("   Mostrar total de aloca%c%ces e desaloca%c%ces de mem%cria ", 135, 228, 135, 228, 162);
+		printf("   Show total memory allocations and deallocations      ");
+
 		if(*mostrar_total_de_alocacoes_e_desalocacoes == 0){
 			printf("      ");
 			alterar_a_cor(branco, vermelho);
-			printf("DESLIGADO");
+			printf("OFF");
 			alterar_a_cor(branco, preto);
 		}else{
 			printf("      ");
 			alterar_a_cor(branco, verde);
-			printf("LIGADO");
+			printf("ON");
 			alterar_a_cor(branco, preto);
 		}
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+7);
-		printf("   Mostrar total de possibilidades analisadas na movimenta%c%co ",135, 198);
+		printf("   Show total of analyzed movement possibilities              ");
 		if(*mostrar_total_de_possibilidades_analisadas == 0){
 			alterar_a_cor(branco, vermelho);
-			printf("DESLIGADO");
+			printf("OFF");
 			alterar_a_cor(branco, preto);
 		}else{
 			alterar_a_cor(branco, verde);
-			printf("LIGADO");
+			printf("ON");
 			alterar_a_cor(branco, preto);
 		}
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+8);
-		printf("Aperte ESC para retornar ao menu principal");
+		printf("Press ESC to return to the main menu");
 		while(botao_esc_acionado != 1){
 			desenhar_seta(coordenada_x_menu_principal, coordenada_y_menu_principal+1, &opcao_escolhida_menu_secundario, 0, 
 				7, 0, &botao_enter_acionado, &botao_esc_acionado, 1, 1, 1, 0);
@@ -2094,31 +2097,32 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 		}
 		if(*mostrar_tamanho_da_pilha == 1){
 			reposicionar_indicador_do_console(coordendada_x_base_para_visualizar_dados, auxiliar_1);
-			printf("Tamanho da pilha == %d", memoria->tamanho);
+			printf("Stack size == %d", memoria->tamanho);
 		}
 		if(*mostrar_capacidade_da_pilha == 1){
 			reposicionar_indicador_do_console(coordendada_x_base_para_visualizar_dados, auxiliar_2);
-			printf("Capacidade da pilha == %d", memoria->capacidade);
+			printf("Stack capacity == %d", memoria->capacidade);
 		}
 		if(*mostrar_coordenada_atual == 1){
 			reposicionar_indicador_do_console(coordendada_x_base_para_visualizar_dados, auxiliar_3);
-			printf("Coordenada atual == (%d, %d)", *coordenada_x_inicio_1, *coordenada_y_inicio_1);
+			printf("Current coordinate == (%d, %d)", *coordenada_x_inicio_1, *coordenada_y_inicio_1);
 		}
 		if(*mostrar_valor_da_variavel_sleep == 1){
 			reposicionar_indicador_do_console(coordendada_x_base_para_visualizar_dados, auxiliar_4);
-			printf("Sleep == %d", *sleep);	
+			printf("Sleep == %d", *sleep);
 		}
 		if(*mostrar_total_de_alocacoes_e_desalocacoes == 1){
 			reposicionar_indicador_do_console(coordendada_x_base_para_visualizar_dados, auxiliar_5);
-			printf("Total de aloca%c%ces na mem%cria == %d", 135, 228, 162, total_de_alocacoes, 135, 228, total_de_desalocacoes);
+			printf("Total of memory allocations == %d", total_de_alocacoes);
+
 		}
 		if(*mostrar_total_de_alocacoes_e_desalocacoes == 1){
 			reposicionar_indicador_do_console(coordendada_x_base_para_visualizar_dados, auxiliar_6);
-			printf("Total de desaloca%c%ces na mem%cria == %d", 135, 228, 162, total_de_desalocacoes);
+			printf("Total of memory deallocations == %d", total_de_desalocacoes);
 		}
 		if(*mostrar_total_de_possibilidades_analisadas == 1){
 			reposicionar_indicador_do_console(coordendada_x_base_para_visualizar_dados, auxiliar_7);
-			printf("Total de possibilidades analisadas na movimenta%c%co do labirinto == %d", 135, 198, total_de_possibilidades_analisadas_na_movimentacao_do_labirinto);	
+			printf("Total possibilities analyzed in the maze movement == %d", total_de_possibilidades_analisadas_na_movimentacao_do_labirinto);
 		}
 		srand(time(0));
 		int quatro_proximas_possibilidades_a_serem_analisadas[4], primeira_execulcao_da_funcao_decidir_caminho_a_ser_tomado = 1,
@@ -2183,16 +2187,16 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 					else if(caminho_escolhido != -1) printf("2");
 				}
 				if(*mostrar_tamanho_da_pilha == 1){
-				reposicionar_indicador_do_console(coordendada_x_base_para_visualizar_dados, auxiliar_1);
-				printf("Tamanho da pilha == %d  ", memoria->tamanho);
+					reposicionar_indicador_do_console(coordendada_x_base_para_visualizar_dados, auxiliar_1);
+					printf("Stack size == %d  ", memoria->tamanho);
 				}
 				if(*mostrar_capacidade_da_pilha == 1){
 					reposicionar_indicador_do_console(coordendada_x_base_para_visualizar_dados, auxiliar_2);
-					printf("Capacidade da pilha == %d  ", memoria->capacidade);
+					printf("Stack capacity == %d  ", memoria->capacidade);
 				}
 				if(*mostrar_coordenada_atual == 1){
 					reposicionar_indicador_do_console(coordendada_x_base_para_visualizar_dados, auxiliar_3);
-					printf("Coordenada atual == (%d, %d)  ", coordenada_x_ini_1_copia, coordenada_y_ini_1_copia);
+					printf("Current coordinate == (%d, %d)  ", coordenada_x_ini_1_copia, coordenada_y_ini_1_copia);
 				}
 				if(*mostrar_valor_da_variavel_sleep == 1){
 					reposicionar_indicador_do_console(coordendada_x_base_para_visualizar_dados, auxiliar_4);
@@ -2200,15 +2204,16 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 				}
 				if(*mostrar_total_de_alocacoes_e_desalocacoes == 1){
 					reposicionar_indicador_do_console(coordendada_x_base_para_visualizar_dados, auxiliar_5);
-					printf("Total de aloca%c%ces na mem%cria == %d  ", 135, 228, 162, total_de_alocacoes, 135, 228, total_de_desalocacoes);
+					printf("Total of memory allocations == %d  ", total_de_alocacoes);
 				}
 				if(*mostrar_total_de_alocacoes_e_desalocacoes == 1){
 					reposicionar_indicador_do_console(coordendada_x_base_para_visualizar_dados, auxiliar_6);
-					printf("Total de desaloca%c%ces na mem%cria == %d  ", 135, 228, 162, total_de_desalocacoes);
+					printf("Total of memory deallocations == %d  ", total_de_desalocacoes);
+
 				}
 				if(*mostrar_total_de_possibilidades_analisadas == 1){
 					reposicionar_indicador_do_console(coordendada_x_base_para_visualizar_dados, auxiliar_7);
-					printf("Total de possibilidades analisadas na movimenta%c%co do labirinto == %d  ", 135, 198, total_de_possibilidades_analisadas_na_movimentacao_do_labirinto);	
+					printf("Total possibilities analyzed in the maze movement == %d", total_de_possibilidades_analisadas_na_movimentacao_do_labirinto);
 				}
 				Sleep(*sleep);
 			}
@@ -2216,10 +2221,11 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 				if(*mostrar_total_de_alocacoes_e_desalocacoes == 1){
 					total_de_desalocacoes = total_de_desalocacoes + 3 + *altura_atual;
 					reposicionar_indicador_do_console(coordendada_x_base_para_visualizar_dados, auxiliar_6);
-					printf("Total de desaloca%c%ces na mem%cria == %d  ", 135, 228, 162, total_de_desalocacoes);
+					printf("Total of memory deallocations == %d", total_de_desalocacoes);
 				}
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, *altura_atual+variavel_de_ajuste_do_printf_da_matriz_nas_linhas+1);
-				printf("Desenho do labirinto conclu%cdo", 161);
+				printf("Maze drawing completed  ");
+
 				alterar_o_tamanho_e_vizibilidade_do_indicador_do_console(1, 1);
 				getch();
 				alterar_o_tamanho_e_vizibilidade_do_indicador_do_console(1, 0);
