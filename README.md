@@ -29,7 +29,7 @@ gcc interface/interface.c interface/stack/stack.c main.c -o main.exe
 
 ---
 
-<img src="images/execution.gif" alt="Execution preview">
+<img src="/images/execution.gif">
 
 ## Features
 
