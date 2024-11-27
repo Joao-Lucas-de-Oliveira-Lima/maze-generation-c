@@ -214,65 +214,48 @@ void desenhar_menu_de_selecao_de_cores(int coordenada_x, int coordenada_y, int c
 
 void mostrar_opcao_atual_no_menu_de_selecao_de_cores(int coordenada_x, int coordenada_y, int cor_atual, int apagar, 
 	int condicao_para_considerar_a_cor_preta){
-	char caractere;
-	alterar_a_cor(verde_brilhante, preto);
-	if(apagar == 1){
-		if(condicao_para_considerar_a_cor_preta == 0) caractere = '\0';
-		else if(condicao_para_considerar_a_cor_preta == 1 && cor_atual == preto) caractere = '|';
-	}else{
-		 if(cor_atual != preto) caractere = 35;
-		 else caractere = '|';
-	}
-	if(cor_atual == azul){
-		reposicionar_indicador_do_console(coordenada_x+2, coordenada_y);
-		printf("%c", caractere);
-	}else if(cor_atual == roxo){
-		reposicionar_indicador_do_console(coordenada_x+2, coordenada_y+1);
-		printf("%c", caractere);
-	}else if(cor_atual == azul_brilhante){
-		reposicionar_indicador_do_console(coordenada_x+2, coordenada_y+2);
-		printf("%c", caractere);
-	}else if(cor_atual == roxo_brilhante){
-		reposicionar_indicador_do_console(coordenada_x+2, coordenada_y+3);
-		printf("%c", caractere);
-	}else if(cor_atual == verde){
-		reposicionar_indicador_do_console(coordenada_x+8, coordenada_y);
-		printf("%c", caractere);
-	}else if(cor_atual == amarelo){
-		reposicionar_indicador_do_console(coordenada_x+8, coordenada_y+1);
-		printf("%c", caractere);
-	}else if(cor_atual == verde_brilhante){
-		reposicionar_indicador_do_console(coordenada_x+8, coordenada_y+2);
-		printf("%c", caractere);
-	}else if(cor_atual == amarelo_brilhante){
-		reposicionar_indicador_do_console(coordenada_x+8, coordenada_y+3);
-		printf("%c", caractere);
-	}else if(cor_atual == ciano){
-		reposicionar_indicador_do_console(coordenada_x+14, coordenada_y);
-		printf("%c", caractere);
-	}else if(cor_atual == cinza_claro){
-		reposicionar_indicador_do_console(coordenada_x+14, coordenada_y+1);
-		printf("%c", caractere);
-	}else if(cor_atual == ciano_brilhante){
-		reposicionar_indicador_do_console(coordenada_x+14, coordenada_y+2);
-		printf("%c", caractere);
-	}else if(cor_atual == branco){
-		reposicionar_indicador_do_console(coordenada_x+14, coordenada_y+3);
-		printf("%c", caractere);
-	}else if(cor_atual == vermelho){
-		reposicionar_indicador_do_console(coordenada_x+20, coordenada_y);
-		printf("%c", caractere);
-	}else if(cor_atual == cinza_escuro){
-		reposicionar_indicador_do_console(coordenada_x+20, coordenada_y+1);
-		printf("%c", caractere);
-	}else if(cor_atual == vermelho_brilhante){
-		reposicionar_indicador_do_console(coordenada_x+20, coordenada_y+2);
-		printf("%c", caractere);
-	}else if(cor_atual == preto){
-		reposicionar_indicador_do_console(coordenada_x+20, coordenada_y+3);
-		if(apagar == 1) alterar_a_cor(branco, preto);
-		printf("%c  %c", caractere, caractere);
-	}
+    char caractere;
+    alterar_a_cor(verde_brilhante, preto);
+    if(apagar == 1){
+        caractere = ' '; // Apaga o caractere anterior
+    }else{
+        caractere = '#'; // Desenha o caractere atual
+    }
+    if(cor_atual == azul){
+        reposicionar_indicador_do_console(coordenada_x+2, coordenada_y);
+    }else if(cor_atual == roxo){
+        reposicionar_indicador_do_console(coordenada_x+2, coordenada_y+1);
+    }else if(cor_atual == azul_brilhante){
+        reposicionar_indicador_do_console(coordenada_x+2, coordenada_y+2);
+    }else if(cor_atual == roxo_brilhante){
+        reposicionar_indicador_do_console(coordenada_x+2, coordenada_y+3);
+    }else if(cor_atual == verde){
+        reposicionar_indicador_do_console(coordenada_x+8, coordenada_y);
+    }else if(cor_atual == amarelo){
+        reposicionar_indicador_do_console(coordenada_x+8, coordenada_y+1);
+    }else if(cor_atual == verde_brilhante){
+        reposicionar_indicador_do_console(coordenada_x+8, coordenada_y+2);
+    }else if(cor_atual == amarelo_brilhante){
+        reposicionar_indicador_do_console(coordenada_x+8, coordenada_y+3);
+    }else if(cor_atual == ciano){
+        reposicionar_indicador_do_console(coordenada_x+14, coordenada_y);
+    }else if(cor_atual == cinza_claro){
+        reposicionar_indicador_do_console(coordenada_x+14, coordenada_y+1);
+    }else if(cor_atual == ciano_brilhante){
+        reposicionar_indicador_do_console(coordenada_x+14, coordenada_y+2);
+    }else if(cor_atual == branco){
+        reposicionar_indicador_do_console(coordenada_x+14, coordenada_y+3);
+    }else if(cor_atual == vermelho){
+        reposicionar_indicador_do_console(coordenada_x+20, coordenada_y);
+    }else if(cor_atual == cinza_escuro){
+        reposicionar_indicador_do_console(coordenada_x+20, coordenada_y+1);
+    }else if(cor_atual == vermelho_brilhante){
+        reposicionar_indicador_do_console(coordenada_x+20, coordenada_y+2);
+    }else if(cor_atual == preto){
+        reposicionar_indicador_do_console(coordenada_x+20, coordenada_y+3);
+        if(apagar == 1) alterar_a_cor(branco, preto);
+    }
+    printf("%c", caractere);
 	alterar_a_cor(branco, preto);
 }
 
