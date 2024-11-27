@@ -1649,7 +1649,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 	}
 	if(opcao_escolhida == 4){
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal);
-		printf("Mostrar informa%c%ces gerais:                                                                  ", 135, 228);
+		printf("   Show general information                                                    ");
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+1);
 		printf("   Show matrix    ");
 		if(*mostrar_matriz == 0){
@@ -2262,23 +2262,23 @@ void desenhar_menu_principal(int coordenada_x_menu_principal, int coordenada_y_m
 		caractere_padrao_utilizado_nas_bordas, cor_padrao_das_bordas);
 	while(botao_esc_acionado != 1){
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal);
-		printf("Quando estiver pronto(a), aperte ENTER na op%c%co \"Iniciar\" para come%car o desenho do labirinto", 135, 198, 135);
+		printf("When you're ready, press ENTER on the option \"Start\" to start drawing the maze", 135, 198, 135);
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+1);
-		printf("Menu principal:                                 ");
+		printf("Main menu:                                 ");
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+2);
-		printf("   Alterar coordenadas de refer%cncia            ", 136);
+		printf("   Change reference coordinates            ");
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+3);
-		printf("   Redimensionar bordas                                   ");
+		printf("   Resize borders                                             ");
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+4);
-		printf("   Alterar caracteres de desenho e ajustes gerais         ");
+		printf("   Change drawing characters and general adjustments         ");
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+5);
-		printf("   Alterar esquema de cores                     ");
+		printf("   Change color scheme                     ");
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+6);
-		printf("   Mostrar informa%c%ces gerais                                          ", 135, 228);
+		printf("   Show general information                                          ");
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+7);
-		printf("   Iniciar                                                                                ");
+		printf("   Start                                                                                ");
 		reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+8);
-		printf("Aperte ESC para encerrar o programa       ");
+		printf("Press ESC to exit the program       ");
 		desenhar_retangulo((coordenada_x_inicio_1*2)+5, coordenada_y_inicio_1+10, (coordenada_x_inicio_2*2)+4, 
 			coordenada_y_inicio_2+10, cor_padrao_do_retangulo_inicial, caractere_padrao_utilizado_nas_paredes);
 		desenhar_retangulo((coordenada_x_fim_1*2)+5, coordenada_y_fim_1+10, (coordenada_x_fim_2*2)+4, coordenada_y_fim_2+10, 
