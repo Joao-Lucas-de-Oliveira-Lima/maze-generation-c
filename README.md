@@ -10,7 +10,7 @@ using the `conio.h` and `windows.h` libraries.
 - [MinGW](https://sourceforge.net/projects/mingw/)
 
 
-### Requisitos
+### Requirements
 ### How to Compile
 
 1. Navigate to the project directory and run the following command to compile:
