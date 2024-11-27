@@ -27,9 +27,7 @@ gcc interface/interface.c interface/stack/stack.c main.c -o main.exe
 
 ## Execution Preview
 
----
-
-<img src="/images/execution.gif">
+<img src="/images/maze_drawing.gif">
 
 ## Features
 
