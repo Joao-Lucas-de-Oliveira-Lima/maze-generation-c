@@ -954,12 +954,12 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 				alterar_a_cor(branco, vermelho);
 				printf("OFF");
 				alterar_a_cor(branco, preto);
-				printf("                    ");
+				printf("                       ");
 		}	else{
 				alterar_a_cor(branco, verde);
 				printf("ON");
 				alterar_a_cor(branco, preto);
-				printf("                       ");
+				printf("                          ");
 			}
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+5);
 			printf("                           ");
@@ -1224,54 +1224,55 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 		while(botao_esc_acionado != 1){
 			int opcao_escolhida_menu_terciario = 0, posicao_da_seta_na_horizontal = 0;
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal);
-			printf("Alterar esquema de cores:                                                                    ");
+			printf("Change color scheme:                                                                         ");
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+1);
-			printf("   Come%co do labirinto > ", 135);
+			printf("   Start of the maze   > ");
+
 			alterar_a_cor(*cor_do_retangulo_inicial, preto);
 			printf("%c%c", 219, 219);
 			alterar_a_cor(branco, preto);
 			printf(" <");
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+2);
-			printf("   Final do labirinto  > ");
+			printf("   End of the maze     > ");
 			alterar_a_cor(*cor_do_retangulo_final, preto);
 			printf("%c%c", 219, 219);
 			alterar_a_cor(branco, preto);
 			printf(" <         ");
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+3);
-			printf("   Paredes intermedi%crias do labirinto - 1%c passada > ", 160, 166);
+			printf("   Intermediate maze walls - Moving forward    > ", 160, 166);
 			alterar_a_cor(*cor_das_paredes_intermediarias, preto);
 			printf("%c%c", 219, 219);
 			alterar_a_cor(branco, preto);
-			printf(" <");
+			printf(" <     ");
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+4);
 			if(*cor_das_paredes_intermediarias_segunda_passada == preto){
-				printf("   Paredes intermedi%crias do labirinto - 2%c passada >", 160, 166);
+				printf("   Intermediate maze walls - Returning         > ");
 				printf("|  |");
-				printf("<           ");
+				printf("<                        ");
 			}else{
-				printf("   Paredes intermedi%crias do labirinto - 2%c passada > ", 160, 166);
+				printf("   Intermediate maze walls - Returning         > ");
 				alterar_a_cor(*cor_das_paredes_intermediarias_segunda_passada, preto);
 				printf("%c%c", 219, 219);
 				alterar_a_cor(branco, preto);
-				printf(" <           ");
+				printf(" <                        ");
 			}
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+5);
-			printf("   Bordas do labirinto > ");
+			printf("   Maze edges          > ");
 			alterar_a_cor(*cor_das_bordas, preto);
 			printf("%c%c", 219, 219);
 			alterar_a_cor(branco, preto);
 			printf(" <");
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+6);
-			printf("                                                                                                                  ");
+			printf("                                                                                                                            ");
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+7);
-			printf("                                                                                                     ");
+			printf("                                                                                                               ");
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+8);
-			printf("Aperte ESC para retornar ao menu principal");
+			printf("Press ESC to return to the main menu");
 			desenhar_seta(coordenada_x_menu_principal, coordenada_y_menu_principal+1, &opcao_escolhida_menu_secundario, 0, 
 				5, 0, &botao_enter_acionado, &botao_esc_acionado, 1, 1, 1, 0);
 			if(opcao_escolhida_menu_secundario == 0 && botao_enter_acionado == 1){
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal);
-				printf("Come%co do labirinto:     ", 135);
+				printf("Start of the maze:               ");
 				desenhar_menu_de_selecao_de_cores(coordenada_x_menu_principal, coordenada_y_menu_principal+1, 0);
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+5);
 				printf("                             ");
@@ -1356,7 +1357,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 			}
 			if(opcao_escolhida_menu_secundario == 1 && botao_enter_acionado == 1){
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal);
-				printf("Final do labirinto:      ");
+				printf("End of the maze:                  ");
 				desenhar_menu_de_selecao_de_cores(coordenada_x_menu_principal, coordenada_y_menu_principal+1, 0);
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+5);
 				printf("                                                          ");
@@ -1441,14 +1442,14 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 			}
 			if(opcao_escolhida_menu_secundario == 2 && botao_enter_acionado == 1){
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal);
-				printf("Paredes intermedi%crias do labirinto - 1%c passada:", 160, 166);
+				printf("   Intermediate maze walls - Moving forward:          ");
 				desenhar_menu_de_selecao_de_cores(coordenada_x_menu_principal, coordenada_y_menu_principal+1, 0);
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+5);
 				printf("                                                          ");
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+6);
-				printf("O Algor%ctimo analisa por qual dos caminhos dispon%cveis pode avan%car, construindo paredes no processo (1%c passada), ", 161, 161, 135, 166);
+				printf("The algorithm analyzes which of the available paths it can move through, building walls in the process (1st pass), ", 161, 161, 135, 166);
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+7);
-				printf("quando n%co h%c mais nenhum camniho v%clido, %c feito o retorno pelas paredes j%c constru%cdas (2%c passada)", 198, 160, 160, 130, 160, 161, 166);
+				printf("when there are no more valid paths, it backtracks through the walls already built (2nd pass)", 198, 160, 160, 130, 160, 161, 166);
 				int copia_posicao_da_seta_na_horizontal = 0;
 				while(botao_esc_acionado != 1){
 					botao_enter_acionado = 0;
@@ -1500,14 +1501,14 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 			}
 			if(opcao_escolhida_menu_secundario == 3 && botao_enter_acionado == 1){
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal);
-				printf("Paredes intermedi%crias do labirinto - 2%c passada:", 160, 166);
+				printf("   Intermediate maze walls - Returning:             ");
 				desenhar_menu_de_selecao_de_cores(coordenada_x_menu_principal, coordenada_y_menu_principal+1, 1);
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+5);
 				printf("                                                          ");
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+6);
-				printf("O Algor%ctimo analisa por qual dos caminhos dispon%cveis pode avan%car, construindo paredes no processo (1%c passada), ", 161, 161, 135, 166);
+				printf("The Algorithm analyzes which of the available paths it can advance through, building walls in the process (1st pass), ");
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+7);
-				printf("quando n%co h%c mais nenhum camniho v%clido, %c feito o retorno pelas paredes j%c constru%cdas (2%c passada)", 198, 160, 160, 130, 160, 161, 166);
+				printf("when there are no more valid paths, it backtracks through the walls already built (2nd pass)");
 				int copia_posicao_da_seta_na_horizontal = 0;
 				while(botao_esc_acionado != 1){
 					botao_enter_acionado = 0;
@@ -1561,7 +1562,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 			}
 			if(opcao_escolhida_menu_secundario == 4 && botao_enter_acionado == 1){
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal);
-				printf("Bordas do labirinto:     ", 160, 166);
+				printf("Maze edges:          ");
 				desenhar_menu_de_selecao_de_cores(coordenada_x_menu_principal, coordenada_y_menu_principal+1, 0);
 				reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+5);
 				printf("                                                          ");
