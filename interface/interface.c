@@ -281,12 +281,12 @@ void imprimir_string_desligado_ou_ligado(int coordenada_x, int coordenada_y, int
 	reposicionar_indicador_do_console(coordenada_x, coordenada_y);
 	if(condicional == 1){
 		alterar_a_cor(cor_do_texto_ligado, cor_do_fundo_ligado);
-		printf("LIGADO");
+		printf("ON");
 		alterar_a_cor(branco, preto);
 		printf("   ");
 	}else{
 		alterar_a_cor(cor_do_texto_desligado, cor_do_fundo_desligado);
-		printf("DESLIGADO");
+		printf("OFF");
 		alterar_a_cor(branco, preto);
 	}
 }
@@ -941,41 +941,41 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 		int opcao_escolhida_menu_terciario = 0, limite_de_opcoes;
 		while(botao_esc_acionado != 1){
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal);
-			printf("Alterar cacacteres das bordas, paredes e ajuste da vari%cvel sleep:                           ", 160);
+			printf("Change border chars, walls and sleep var adjustment:                                          ");
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+1);
-			printf("   Estilo de borda                  ");
+			printf("   Border style                                        ");
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+2);
-			printf("   Caractere utilizado nas paredes          ");
+			printf("   Wall char used                   ");
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+3);
-			printf("   Vari%cvel sleep == %d       ", 160, *sleep);
+			printf("   Sleep variable == %d           ", *sleep);
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+4);
-			printf("   Mostrar mensagens de aviso ");
+			printf("   Show warning messages ");
 			if(*confirmacao_de_sim_do_aviso_sobre_matriz_e_tamanho_do_labirinto == 1){
 				alterar_a_cor(branco, vermelho);
-				printf("DESLIGADO");
+				printf("OFF");
 				alterar_a_cor(branco, preto);
-				printf("          ");
+				printf("                    ");
 		}	else{
 				alterar_a_cor(branco, verde);
-				printf("LIGADO");
+				printf("ON");
 				alterar_a_cor(branco, preto);
-				printf("             ");
+				printf("                       ");
 			}
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+5);
 			printf("                           ");
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+6);
 			printf("                                       ");
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+7);
-			printf("Quanto maior for o valor da vari%cvel sleep, mais devagar ser%c feito o desenho do labirinto", 160, 160);
+			printf("The higher the value of the sleep var, the slower the maze drawing will be", 160, 160);
 			reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+8);
-			printf("Aperte ESC para retornar ao menu principal");
+			printf("Press ESC to return to the main menu");
 			desenhar_seta(coordenada_x_menu_principal, coordenada_y_menu_principal+1, &opcao_escolhida_menu_secundario, 0, 4,
 				0, &botao_enter_acionado, &botao_esc_acionado, 1, 1, 1, 0);
 			if(opcao_escolhida_menu_secundario == 0 && botao_enter_acionado == 1){
 				while(botao_esc_acionado != 1){
 					botao_enter_acionado = 0;
 					reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal);
-					printf("Estilo de borda:                                                  ");
+					printf("   Border style                                        ");
 					reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+1);
 					if(*caractere_utilizado_nas_bordas != -60 && *caractere_utilizado_nas_bordas != -51 && 
 						*caractere_utilizado_nas_bordas != -80 && *caractere_utilizado_nas_bordas != -79 &&
@@ -983,27 +983,27 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 						alterar_a_cor(verde_brilhante, preto);
 						printf("  %c", 35);
 						alterar_a_cor(branco, preto);
-						printf("Digitar c%cdigo do caractere > %c <   ", 162, *caractere_utilizado_nas_bordas);
+						printf("Choose a character by code  > %c <   ", *caractere_utilizado_nas_bordas);
 					}else{
-						printf("   Digitar c%cdigo do caractere > %c <   ", 162, *caractere_utilizado_nas_bordas);
+						printf("   Choose a character by code  > %c <   ", *caractere_utilizado_nas_bordas);
 					}
 					reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+2);
 					if(*caractere_utilizado_nas_bordas == -60){
 						alterar_a_cor(verde_brilhante, preto);
 						printf("  %c", 35);
 						alterar_a_cor(branco, preto);
-						printf("%c%c%c%c%c%c%c%c%c | Modelo Pronto      ", 196, 196, 196, 196, 196, 196, 196, 196, 196);	
+						printf("%c%c%c%c%c%c%c%c%c | Ready Template      ", 196, 196, 196, 196, 196, 196, 196, 196, 196);	
 					}else{
-						printf("   %c%c%c%c%c%c%c%c%c | Modelo Pronto      ", 196, 196, 196, 196, 196, 196, 196, 196, 196);
+						printf("   %c%c%c%c%c%c%c%c%c | Ready Template      ", 196, 196, 196, 196, 196, 196, 196, 196, 196);
 					}
 					reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+3);
 					if(*caractere_utilizado_nas_bordas == -51){
 						alterar_a_cor(verde_brilhante, preto);
 						printf("  %c", 35);
 						alterar_a_cor(branco, preto);
-						printf("%c%c%c%c%c%c%c%c%c | Modelo Pronto", 205, 205, 205, 205, 205, 205, 205, 205, 205);
+						printf("%c%c%c%c%c%c%c%c%c | Ready Template", 205, 205, 205, 205, 205, 205, 205, 205, 205);
 					}else{
-						printf("   %c%c%c%c%c%c%c%c%c | Modelo Pronto", 205, 205, 205, 205, 205, 205, 205, 205, 205);
+						printf("   %c%c%c%c%c%c%c%c%c | Ready Template", 205, 205, 205, 205, 205, 205, 205, 205, 205);
 					}
 					reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+4);
 					if(*caractere_utilizado_nas_bordas == -80){
@@ -1042,7 +1042,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 						printf("   %c%c%c%c%c%c%c%c%c                                                                              ", 219, 219, 219, 219, 219, 219, 219, 219, 219);
 					}
 					reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+8);
-					printf("Aperte ESC para retornar ao menu principal");
+					printf("Press ESC to return to the main menu");
 					desenhar_seta(coordenada_x_menu_principal, coordenada_y_menu_principal+1, &opcao_escolhida_menu_terciario, 0, 
 						7, 0, &botao_enter_acionado, &botao_esc_acionado, 1, 1, 1, 0);
 					if(opcao_escolhida_menu_terciario == 0 && botao_enter_acionado == 1){
@@ -1095,16 +1095,17 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 				while(botao_esc_acionado != 1){
 					botao_enter_acionado = 0;
 					reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal);
-					printf("Caractere utilizado nas paredes:                                  ");
+					printf("Character used in the maze walls:                                  "); 
 					reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+1);
 					if(*caractere_utilizado_nas_paredes != -80 && *caractere_utilizado_nas_paredes != -79 &&
 						*caractere_utilizado_nas_paredes != -78 && *caractere_utilizado_nas_paredes != -37){
 						alterar_a_cor(verde_brilhante, preto);
 						printf("  %c", 35);
 						alterar_a_cor(branco, preto);
-						printf("Digitar c%cdigo do caractere > %c <   ", 162, *caractere_utilizado_nas_paredes);
+						printf("Choose a character by code  > %c <   ", *caractere_utilizado_nas_paredes);
+						
 					}else{
-						printf("   Digitar c%cdigo do caractere > %c <   ", 162, *caractere_utilizado_nas_paredes);
+						printf("   Choose a character by code  > %c <   ", *caractere_utilizado_nas_paredes);
 					}
 					reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+2);
 					if(*caractere_utilizado_nas_paredes == -80){
@@ -1143,7 +1144,7 @@ void inserir_dados(int coordenada_x_menu_principal, int coordenada_y_menu_princi
 						printf("   %c%c%c%c%c%c%c%c%c                                                                              ", 219, 219, 219, 219, 219, 219, 219, 219, 219);
 					}
 					reposicionar_indicador_do_console(coordenada_x_menu_principal, coordenada_y_menu_principal+8);
-					printf("Aperte ESC para retornar ao menu principal");
+					printf("Press ESC to return to the main menu");
 					desenhar_seta(coordenada_x_menu_principal, coordenada_y_menu_principal+1, &opcao_escolhida_menu_terciario, 0, 
 						5, 0, &botao_enter_acionado, &botao_esc_acionado, 1, 1, 1, 0);
 					if(opcao_escolhida_menu_terciario == 0 && botao_enter_acionado == 1){
