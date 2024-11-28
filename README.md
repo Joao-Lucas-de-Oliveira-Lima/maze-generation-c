@@ -21,7 +21,7 @@ gcc interface/interface.c interface/stack/stack.c main.c -o main.exe
 2. To execute the program:
 
 ```bash
-.\main.exe
+main.exe
 ```
 ###
 
