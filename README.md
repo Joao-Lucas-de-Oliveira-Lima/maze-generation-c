@@ -25,7 +25,7 @@ main.exe
 ```
 ###
 
-## 🎮 Execution Preview
+## Execution Preview
 
 <img src="/images/maze_drawing.gif">
 
