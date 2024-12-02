@@ -1,4 +1,4 @@
-# Maze Generation with Backtracking
+# 🌀 Maze Generation with Backtracking
 
 This project implements an algorithm for maze generation using **backtracking techniques**. 
 The program is developed in **C** and utilizes a **dynamic stack** to manage coordinates 
@@ -25,30 +25,30 @@ main.exe
 ```
 ###
 
-## Execution Preview
+## 🎮 Execution Preview
 
 <img src="/images/maze_drawing.gif">
 
-## Features
+## 📝 Algorithm
 
-- **Maze Generation:** Implements the backtracking algorithm to create random mazes.
-- **Stack Management:** Utilizes a dynamic stack to handle coordinates during exploration.
-- **Console Visualization:** The generated maze is displayed in the console, along with additional information such as stack state and maze settings.
-- **Customizable Settings:** Users can modify maze dimensions, drawing colors, and other parameters.
+1. Randomly visiting unvisited neighbors from the current cell.
+2. Backtracking when no unvisited neighbors are available.
+3. Using a dynamic stack to track and revisit paths as needed.
 
-### Components
+## 📂 Components
 
-### Stack Functions
+### Dynamic Stack Functions
 
-The following functions manage the dynamic stack:
+The dynamic stack is the core data structure for managing the exploration process:
 
-- **allocate_sequential_list:** Dynamically allocates a sequential list with an initial capacity.
-- **increase_list_capacity:** Increases the capacity of the sequential list when necessary.
-- **decrease_list_capacity:** Reduces the capacity of the sequential list when unused space is detected.
-- **insert_coordinate:** Inserts a coordinate into the sequential list, resizing it if needed.
-- **remove_coordinate:** Removes the most recent coordinate from the list and adjusts its capacity.
-- **free_sequential_list:** Releases the memory allocated for the sequential list.
+- **`allocate_sequential_list`**: Allocates a sequential list with an initial capacity.
+- **`increase_list_capacity`**: Expands the list dynamically as needed.
+- **`decrease_list_capacity`**: Shrinks the list when unused space is detected.
+- **`insert_coordinate`**: Adds a coordinate to the stack, resizing if necessary.
+- **`remove_coordinate`**: Removes the top coordinate from the stack.
+- **`free_sequential_list`**: Frees memory allocated to the stack.
 
 ### Memory Allocations
-- **Sequential List:** Dynamically allocated to store explored coordinates, with capacity adjusted during maze exploration.
-- **Maze Matrix:** Dynamically allocated based on user-defined dimensions (height and width).
+
+- **Sequential List**: Dynamically adjusts to store coordinates during backtracking.
+- **Maze Matrix**: Allocated based on user-defined dimensions (height and width).
