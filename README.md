@@ -1,54 +1,28 @@
-# 🌀 Maze Generation with Backtracking
+# 🌀 Maze Generation  
 
-This project implements an algorithm for maze generation using **backtracking techniques**. 
-The program is developed in **C** and utilizes a **dynamic stack** to manage coordinates 
-during the maze exploration. The maze is drawn and manipulated directly in the console 
-using the `conio.h` and `windows.h` libraries.
+![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)  
 
+This project implements a maze generation algorithm in `C`. It utilizes the `conio.h` and `windows.h` libraries for rendering the maze in the console.  
 
-- Windows Environment
-- [MinGW](https://sourceforge.net/projects/mingw/)
+Since the project relies on Windows-specific libraries, it requires **MinGW** to compile and run the code.  
 
+- [Download MinGW](https://sourceforge.net/projects/mingw/)  
 
-### Requirements
-### How to Compile
+## 🛠 Requirements  
+### 🔹 How to Compile  
 
-1. Navigate to the project directory and run the following command to compile:
+1. Navigate to the project directory and run the following command to compile:  
 
-```bash
-gcc interface/interface.c interface/stack/stack.c main.c -o main.exe
-```
-2. To execute the program:
+   ```bash
+   gcc interface/interface.c interface/stack/stack.c main.c -o main.exe
+   ```
 
-```bash
-main.exe
-```
-###
+2. Execute the program with:  
 
-## Execution Preview
+   ```bash
+   main.exe
+   ```
 
-<img src="/images/maze_drawing.gif">
+## 🎮 Execution Preview  
 
-## 📝 Algorithm
-
-1. Randomly visiting unvisited neighbors from the current cell.
-2. Backtracking when no unvisited neighbors are available.
-3. Using a dynamic stack to track and revisit paths as needed.
-
-## 📂 Components
-
-### Dynamic Stack Functions
-
-The dynamic stack is the core data structure for managing the exploration process:
-
-- **`allocate_sequential_list`**: Allocates a sequential list with an initial capacity.
-- **`increase_list_capacity`**: Expands the list dynamically as needed.
-- **`decrease_list_capacity`**: Shrinks the list when unused space is detected.
-- **`insert_coordinate`**: Adds a coordinate to the stack, resizing if necessary.
-- **`remove_coordinate`**: Removes the top coordinate from the stack.
-- **`free_sequential_list`**: Frees memory allocated to the stack.
-
-### Memory Allocations
-
-- **Sequential List**: Dynamically adjusts to store coordinates during backtracking.
-- **Maze Matrix**: Allocated based on user-defined dimensions (height and width).
+<img src="/images/maze_drawing.gif">  
